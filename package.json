@@ -4,8 +4,9 @@
   "description": "snakes game redux",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js"
+    "start": "node server/server.js",
+    "start:dev": "webpack-dev-server",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",

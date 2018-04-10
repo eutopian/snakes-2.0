@@ -23,8 +23,7 @@ module.exports = {
   },
   mode: 'development',
   devServer: {
-      contentBase: path.resolve(__dirname, "./"),
-      historyApiFallback: true,
-      watchContentBase: true
+    contentBase: path.resolve(__dirname, "./"),
+    watchContentBase: true
   }
 }
