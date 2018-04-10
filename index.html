@@ -1,18 +1,25 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <!-- <title>Build Tools Challenge</title> -->
+  <title>Snakes 2.0</title>
   <!-- comment out the below link tags when bundling styles with webpack -->
   <!-- <link rel="stylesheet" href="client/stylesheets/styles.css"> -->
 </head>
 <body>
-  <!-- <h1>Build Tools Challenge</h1> -->
+   
+          Login
+          <form method="POST" action='/login'>
+            <input name="username" type="text" placeholder="username"></input>
+            <input name="password" type="password" placeholder="password"></input>
+            <input type='submit' value="login">
+          </form>
+          <form method="POST" action='/auth'>
+            <input type='submit' value='Login with GitHub'></input>
+          </form>
+          <a href='./signup'>Sign up</a>
+        
+
   <div id="root"></div>
-
-  <!-- bundle for gulp build -->
-  <!-- <script src="build/bundle.js"></script> -->
-
-  <!-- uncomment below and comment out the tag above for webpack challenge -->
   <script src="build/webpack-bundle.js"></script>
 
 </body>
