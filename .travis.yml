@@ -1,0 +1,9 @@
+language: node_js
+notifications:
+  email: false
+node_js:
+  - '6.0.0'
+before_install:
+  - travis_retry nvm install 6.0.0
+script:
+  - npm test
