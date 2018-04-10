@@ -1,15 +1,28 @@
 require('dotenv').config();
+
 const express = require('express');
+const http = require('http');
 const app = express();
-const mongoose = require('mongoose');
 const path = require('path');
+
+//JSON PARSER
 const bodyParser = require('body-parser');
-const userController = require('./user/userController');
+
+//MONGO DB
+const mongoose = require('mongoose');
 const mongoUsername = process.env.MONGOUSER
 const mongoPassword = process.env.MONGOPASS
 const mongoApp = process.env.MONGOAPP
 const mongoNum = process.env.MONGONUM
 const mongoClient = process.env.MONGOCLIENT
+
+//SOCKET IO
+const socketIO = require('socket.io');
+const server = http.Server(app);
+const io = socketIO(server);
+
+//CONTROLLERS
+const userController = require('./user/userController');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -20,7 +33,16 @@ mongoose.connection.once('open', () => {
 
 app.post('/', userController.createUser)
 
+app.set('port', 3000);
 app.use(express.static(__dirname +'./../'));
+
+io.on('connection', function(socket) {
+});
+
+setInterval(function() {
+  io.sockets.emit('message', 'hi!');
+}, 1000);
+
 app.listen(3000); 
 
 module.exports = app;
