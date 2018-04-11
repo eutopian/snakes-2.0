@@ -20,6 +20,8 @@ mongoose.connection.once('open', () => {
 
 app.post('/', userController.createUser)
 
+app.get('/games', userController.getAllUsers);
+
 app.use(express.static(__dirname +'./../'));
 app.listen(3000); 
 
