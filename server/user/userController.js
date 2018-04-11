@@ -12,4 +12,14 @@ userController.createUser = (req, res) => {
   })
 }
 
+userController.getAllUsers = (req, res) => {
+  User.find({}, (err, result) => {
+    if (err) {
+      console.log(err)
+    } else {
+      return res.json(result)
+    }
+  })
+}
+
 module.exports = userController;

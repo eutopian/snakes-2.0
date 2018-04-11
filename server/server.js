@@ -33,7 +33,8 @@ mongoose.connection.once('open', () => {
 
 app.post('/', userController.createUser)
 
-app.set('port', 3000);
+app.get('/games', userController.getAllUsers);
+
 app.use(express.static(__dirname +'./../'));
 
 io.on('connection', function(socket) {

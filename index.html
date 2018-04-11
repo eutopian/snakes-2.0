@@ -6,6 +6,14 @@
   <!-- <link rel="stylesheet" href="client/stylesheets/styles.css"> -->
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1629411057389124&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
    
           Signup
           <form method="POST" action='/'>
@@ -14,7 +22,7 @@
             <input type='submit' value="signup">
           </form>
           <form method="POST" action='/auth'>
-            <input type='submit' value='Login with GitHub'></input>
+            <div class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
           </form>
           <!-- <a href='./signup'>Sign up</a> -->
         
