@@ -4,7 +4,6 @@ import GameList from './components/GameList';
 import Board from './components/Board';
 import { isEqual, some, max } from 'underscore';
 
-
 function getInitialSnake() {
   let snakeHead = [randint(50), randint(50)]
   let snake = []
@@ -29,7 +28,6 @@ function getInitialState() {
     gameList: []
   };
 };
-
 
 function fetchGames() {
   return fetch('/games')
@@ -211,8 +209,8 @@ class App extends Component {
         <p>My new snakes</p>
         
         <Board rows={this.state.rows} columns={this.state.columns} snake={this.state.snake} apple={this.state.apple}/>
-        {this.state.lost ? <div className="lost">You lost. <button ref="restart" onClick={this.restart}>restart?</button></div> : null}
-        {this.state.paused ? <div>paused. spacebar to unpause.</div> : <div>playing. spacebar to pause.</div>}
+          {this.state.lost ? <div className="lost">You lost. <button ref="restart" onClick={this.restart}>restart?</button></div> : null}
+          {this.state.paused ? <div>paused. spacebar to unpause.</div> : <div>playing. spacebar to pause.</div>}
         <p>Score: {this.state.snake.size}. High score: {this.state.highScore}</p>
         <p>Feel free to leave the page in the middle of your game. It will still be here when you get back.</p>
         <form>
